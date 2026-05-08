@@ -1,0 +1,22 @@
+# Render configuration
+runtime: python
+buildCommand: ./build.sh
+startCommand: gunicorn api.main:app --bind 0.0.0.0:$PORT --workers 2 --threads 4
+
+healthCheckPath: /api/health
+
+env:
+  - key: ANTHROPIC_API_KEY
+    sync: false
+  - key: ANTHROPIC_BASE_URL
+    value: https://opencode.ai/zen
+  - key: ANTHROPIC_MODEL
+    value: minimax-m2.5-free
+  - key: DATABASE_URL
+    fromDatabase:
+      name: uap-nexus-db
+      property: connectionString
+  - key: REDIS_URL
+    fromService:
+      name: uap-nexus-redis
+      envVarKey: REDIS_URL

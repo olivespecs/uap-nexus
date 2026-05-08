@@ -1,0 +1,42 @@
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# State files
+crawler/.state/
+*.log
+
+# Uploads
+uploads/
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Secrets
+*.pem
+*.key
+credentials.json
